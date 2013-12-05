@@ -4,43 +4,42 @@
 #
 #####
 
-from deckMaker import deck1
+import deckMaker
 import random
+import mulligan
+
+
+
+x = 7
+i = 0
+
+def openingHand(str, x):
+    shuffled = random.shuffle(deckMaker.deck)
+    print str
+    for i in range(x):
+        print deckMaker.deck[i]
+        i += 1
+
+def mulligan():
+    mulligan = str(raw_input('Keep or Mulligan? (k/m) '))
+    if (mulligan == 'k'):
+        pass
+
+    elif (mulligan == 'm'):
+        a = 'Redraw:'
+        openingHand(a, 6)
+    
+    else:
+        print 'k/m only'
+      
+
+openingHand('Opening Hand:', 7)
+mulligan()
+mulligan()
+    
+
 
 '''
-a = "card1"
-b = "card2"
-c = "card3"
-d = "card4"
-e = "card5"
-f = "card6"
-g = "card7"
-h = "card8"
-i = "card9"
-j = "card10"
-k = "card11"
-l = "card12"
-m = "card13"
-n = "card14"
-o = "card15"
-
-deck = [a, a, a, a, b, b, b, b, c, c, c, c, d, d, d, d, e, e, e, e,
-        f, f, f, f, g, g, g, g, h, h, h, h, i, i, i, i, j, j, j, j,
-        k, k, k, k, l, l, l, l, m, m, m, m, n, n, n, n, o, o, o, o]
-
-deck = random.shuffle(deck)
-'''
-
-
-x = 0
-
-print "Opening hand:"
-for x in range(7):
-    print deck1
-    x += 1
-'''
-
-
 while (x < len(deck) - 1):
     n = random.randint(0, len(deck) - 1)
     print deck[n]
@@ -56,6 +55,10 @@ while(len(deck) > 0):
 '''
 
 
+
+
+
+'''
 mulligan = str(raw_input('Keep or Mulligan? (k/m) '))
 if (mulligan == 'k'):
     print 1
@@ -65,4 +68,5 @@ elif (mulligan == 'm'):
 
 else:
     print 'k/m only'
- 
+
+'''
