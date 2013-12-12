@@ -13,7 +13,7 @@ def mulligan():
         pass
 
     elif (mulligan == 'm'):
-        virtualMTG.openingHand('Redraw', 6)
+        virtualMTG.openingHand('Redraw', virtualMTG.x - 1)
     
     else:
         print 'k/m only'

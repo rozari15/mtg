@@ -1,5 +1,5 @@
 #
-# VIRTUAL MAGIC THE GATHERING 1.0
+# VIRTUAL MAGIC THE GATHERING 1.5
 # python (c) REL, 2013
 #
 #####
@@ -10,13 +10,14 @@ import mulligan
 
 
 
-x = 7
+x = 0
 i = 0
+deck = []
 
-def openingHand(str, x):
-    shuffled = random.shuffle(deckMaker.deck)
+def openingHand(str, int):
+    deckMaker.madeDeck()
     print str
-    for i in range(x):
+    for i in range(int):
         print deckMaker.deck[i]
         i += 1
 
@@ -26,15 +27,14 @@ def mulligan():
         pass
 
     elif (mulligan == 'm'):
-        a = 'Redraw:'
-        openingHand(a, 6)
-    
+        openingHand('Redraw', 6)
+        
     else:
         print 'k/m only'
+        mulligan()
       
 
 openingHand('Opening Hand:', 7)
-mulligan()
 mulligan()
     
 
@@ -55,18 +55,3 @@ while(len(deck) > 0):
 '''
 
 
-
-
-
-'''
-mulligan = str(raw_input('Keep or Mulligan? (k/m) '))
-if (mulligan == 'k'):
-    print 1
-
-elif (mulligan == 'm'):
-    print 2
-
-else:
-    print 'k/m only'
-
-'''
