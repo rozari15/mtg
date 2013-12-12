@@ -4,17 +4,21 @@
 #
 #####
 
-import virtualMTG
 
+
+
+x = 7
 
 def mulligan():
+    global x
     mulligan = str(raw_input('Keep or Mulligan? (k/m) '))
     if (mulligan == 'k'):
         pass
 
     elif (mulligan == 'm'):
-        virtualMTG.openingHand('Redraw', virtualMTG.x - 1)
-    
+        openingHand('Redraw', x - 1)
+        
     else:
         print 'k/m only'
+        mulligan()
 
